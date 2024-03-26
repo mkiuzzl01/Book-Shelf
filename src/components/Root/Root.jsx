@@ -6,8 +6,12 @@ const Root = () => {
     return (
         <div>
             <div className="max-w-6xl m-auto">
+            <div className="sticky top-0 z-10">
             <Header></Header>
+            </div>
+            <div className="">
             <Outlet></Outlet>
+            </div>
             </div>
             <Footer></Footer>
         </div>

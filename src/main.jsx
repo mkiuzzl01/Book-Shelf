@@ -6,6 +6,9 @@ import Root from './components/Root/Root.jsx'
 import Home from './components/Home/Home.jsx'
 import Listed_Books from './components/Listed_Books/Listed_Books.jsx'
 import Pages_to_Read from './components/Pages_to_Read/Pages_to_Read.jsx'
+import Book_detail from './components/Book_detail/Book_detail.jsx'
+import '../public/Books.json'
+import axios from "axios";
 const router = createBrowserRouter([
   {
     path:'/',
@@ -13,7 +16,20 @@ const router = createBrowserRouter([
     children:[
       {
         path:'/',
-        element:<Home></Home>,
+        loader:()=>fetch('../public/Books.json'),
+        element:<Home></Home>
+      },
+      {
+        path:'/Book_detail/:bookId',
+        element:<Book_detail></Book_detail>,
+        loader:async(params)=>{
+         return axios.get('../public/Books.json').then((data)=>{
+          const books = data.data;
+           const info = books.find(book=> book.bookId == params.params.bookId)
+           return info;
+          }) ;
+          
+        }
       },
       {
         path:'/Listed_Books',
