@@ -1,16 +1,48 @@
 import {useLoaderData} from "react-router-dom";
 import { Link } from "react-router-dom";
-import { setBook } from "../../Utility/LocalStorage";
+import { getBooks, setBook } from "../../Utility/LocalStorage";
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 const Book_detail = () => {
     const book = useLoaderData();
     const {bookId,bookName,category,author,image,publisher,rating,review,tags,totalPages,yearOfPublishing} = book;
+
     const handleRead = ID =>{
-        setBook(ID,'Read-List');
+        const getReadList = getBooks('Read-List');
+        if(!getReadList.includes(ID)){
+            setBook(ID,'Read-List');
+            setBook(ID,'Wish-List');
+            toast.success("Book Added to Read List", {
+                position: "bottom-center"
+              });
+        }else{
+            toast.warn("You have Already Read This Book!", {
+                position: "bottom-center"
+              });
+        }
+        
     }  
     const handleWishlist = ID =>{
-        setBook(ID,'Wish-List');
+        const getWishlist = getBooks('Wish-List');
+        const getReadList = getBooks('Read-List');
+        if(!getWishlist.includes(ID)){
+            setBook(ID,'Wish-List');
+            toast.success("Book Added to Wishlist", {
+                position: "bottom-center"
+              });
+
+        }else if(getReadList.includes(ID)){
+            toast.warn("You have Already Read This Book", {
+                position: "bottom-center"
+              });
+        }else{
+            toast.warn("Already Added to Wishlist!", {
+                position: "bottom-center"
+              });
+        }
     }
+
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
             <div className="bg-[#1313130D] p-8 flex justify-center items-center">
@@ -55,8 +87,9 @@ const Book_detail = () => {
                 </table>
             </div>
             <div className="mt-2">
-                <Link onClick={()=>handleRead(bookId)} className="mx-2"><button className="btn bg-white">Read</button></Link>
+                <Link onClick={()=>handleRead(bookId)} className="mx-2"><button className="btn bg-white text-black hover:bg-[#23BE0A] hover:text-white">Read</button></Link>
                 <Link onClick={()=>handleWishlist(bookId)} className="mx-2"><button className="btn bg-[#50B1C9] text-white">Wishlist</button></Link>
+                <ToastContainer />
             </div>
            </div>
            </div>

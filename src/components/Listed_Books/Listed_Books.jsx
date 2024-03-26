@@ -1,7 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import { useState } from "react";
-
-
+import { MdKeyboardArrowDown } from "react-icons/md";
 const Listed_Books = () => {
   const [index, setIndex] = useState(0);
 
@@ -11,17 +10,22 @@ const Listed_Books = () => {
         Books
       </h1>
       <div className="flex justify-center">
-        <details className="dropdown">
-          <summary className="m-1 btn">Short By </summary>
-          <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <a>Item 2</a>
-            </li>
-          </ul>
-        </details>
+      <div className="dropdown">
+        <div tabIndex={0} role="button" className="btn m-1 bg-[#23BE0A] text-white">
+          Short By <MdKeyboardArrowDown className="text-2xl" />
+        </div>
+        <ul
+          tabIndex={0}
+          className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+        >
+          <li>
+            <a>Item 1</a>
+          </li>
+          <li>
+            <a>Item 2</a>
+          </li>
+        </ul>
+      </div>
       </div>
       <div className="flex items-center mx-4 overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap text-gray-100 dark:text-gray-800">
         <Link
