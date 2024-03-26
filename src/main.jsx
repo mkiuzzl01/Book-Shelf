@@ -9,7 +9,8 @@ import Pages_to_Read from './components/Pages_to_Read/Pages_to_Read.jsx'
 import Book_detail from './components/Book_detail/Book_detail.jsx'
 import '../public/Books.json'
 import axios from "axios";
-import { data } from 'autoprefixer'
+import Wishlist_Books from './components/Wishlist_Books/Wishlist_Books.jsx'
+import Read_Books from './components/Read_Books/Read_Books.jsx'
 const router = createBrowserRouter([
   {
     path:'/',
@@ -35,11 +36,26 @@ const router = createBrowserRouter([
       {
         path:'/Listed_Books',
         element:<Listed_Books></Listed_Books>,
-        loader:async()=>{
-         return axios.get('../public/Books.json').then((data)=>{
-             return data.data; 
-          })
+        children:[
+        {
+          index:true,
+          element:<Read_Books></Read_Books>,
+          loader:async()=>{
+            return axios.get('../public/Books.json').then((data)=>{
+                return data.data; 
+             })
+          }
+        },
+        {
+          path:'Wish_list',
+          element:<Wishlist_Books></Wishlist_Books>,
+          loader:async()=>{
+            return axios.get('../public/Books.json').then((data)=>{
+                return data.data; 
+             })
+          }
         }
+      ]
       },
       {
         path:'/Pages_to_Read',
