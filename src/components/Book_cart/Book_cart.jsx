@@ -11,9 +11,9 @@ const Book_cart = ({ book }) => {
           <img src={image} alt={bookName} />
         </figure>
         <div className="card-body">
-          <div className="flex text-[#23BE0A]">
+          <div className="flex text-[#23BE0A] text-center">
             {tags.map((tag, idx) => (
-              <p className="bg-[#23BE0A0D]" key={idx}>
+              <p className="bg-[#23BE0A0D] mx-2 rounded-lg" key={idx}>
                 {tag}
               </p>
             ))}
