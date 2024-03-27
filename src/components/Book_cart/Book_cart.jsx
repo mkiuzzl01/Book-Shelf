@@ -1,9 +1,9 @@
 import { PiStarThin } from "react-icons/pi";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
-const Book_cart = ({ book }) => {
+const Book_cart = ({book}) => {
   const { bookId, tags, rating, category, author, bookName, image } = book;
-
   return (
     <Link to={`/Book_detail/${bookId}`}>
       <div className="card bg-base-100 shadow-lg border-2 p-4">
@@ -19,7 +19,7 @@ const Book_cart = ({ book }) => {
             ))}
           </div>
           <h2 className="card-title">{bookName}</h2>
-          <div className="border-b-2 pb-4">
+          <div className="border-b-2 border-dashed pb-4">
             <p>By: {author}</p>
           </div>
           <div className="flex justify-between ">
@@ -34,5 +34,7 @@ const Book_cart = ({ book }) => {
     </Link>
   );
 };
-
+Book_cart.propTypes ={
+  book:PropTypes.object,
+}
 export default Book_cart;

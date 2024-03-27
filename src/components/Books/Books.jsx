@@ -1,8 +1,6 @@
-
+import PropTypes from 'prop-types';
 import Book_cart from "../Book_cart/Book_cart";
-
 const Books = ({books}) => {
-
     return (
         <div>
             <h1 className="text-4xl font-bold text-center mb-8">Books</h1>
@@ -14,5 +12,7 @@ const Books = ({books}) => {
         </div>
     );
 };
-
+Books.propTypes ={
+    books:PropTypes.array,
+}
 export default Books;

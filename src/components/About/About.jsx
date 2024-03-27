@@ -1,7 +1,7 @@
 const About = () => {
   return (
     <div className="space-y-4 p-4">
-      <h1 className="text-4xl font-bold">Welcome to Book shelf!</h1>
+      <h1 className="text-4xl font-bold playfair-display">Welcome to Book shelf!</h1>
       <p className="text-lg">
         At Book Vibe, we're passionate about All Your Favorite Books Here .
         Founded on the belief that we want create hobbit to Read book Human, we

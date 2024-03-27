@@ -1,4 +1,3 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
@@ -14,15 +13,16 @@ import Read_Books from "./components/Read_Books/Read_Books.jsx";
 import About from "./components/About/About.jsx";
 import Contact_Us from "./components/Contact_Us/Contact_Us.jsx";
 import Not_Found_Page from "./components/Not_Found_Page/Not_Found_Page.jsx";
+import React from "react";
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Root></Root>,
     errorElement:<Not_Found_Page></Not_Found_Page>,
     children: [
       {
-        path: "/",
-        loader: () => fetch("../public/Books.json"),
+        path: '/',
+        loader: () => fetch("/Books.json"),
         element: <Home></Home>,
       },
       {
@@ -34,10 +34,10 @@ const router = createBrowserRouter([
         element:<Contact_Us></Contact_Us>
       },
       {
-        path: "/Book_detail/:bookId",
+        path:'/Book_detail/:bookId',
         element: <Book_detail></Book_detail>,
         loader: async (params) => {
-          return axios.get("../public/Books.json").then((data) => {
+          return axios.get("/Books.json").then((data) => {
             const books = data.data;
             const info = books.find(
               (book) => book.bookId == params.params.bookId
@@ -47,23 +47,23 @@ const router = createBrowserRouter([
         },
       },
       {
-        path: "/Listed_Books",
+        path:'/Listed_Books',
         element: <Listed_Books></Listed_Books>,
         children: [
           {
             index: true,
             element: <Read_Books></Read_Books>,
             loader: async () => {
-              return axios.get("../public/Books.json").then((data) => {
+              return axios.get("/Books.json").then((data) => {
                 return data.data;
-              });
+              })
             },
           },
           {
-            path: "Wish_list",
+            path:'Wish_list',
             element: <Wishlist_Books></Wishlist_Books>,
             loader: async () => {
-              return axios.get("../public/Books.json").then((data) => {
+              return axios.get("/Books.json").then((data) => {
                 return data.data;
               });
             },
@@ -71,10 +71,10 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: "/Pages_to_Read",
+        path:'/Pages_to_Read',
         element: <Pages_to_Read></Pages_to_Read>,
         loader: async () => {
-          return axios.get("../public/Books.json").then((data) => {
+          return axios.get("/Books.json").then((data) => {
             return data.data;
           });
         },

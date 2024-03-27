@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { IoPeopleOutline } from "react-icons/io5";
 import { MdOutlineFindInPage } from "react-icons/md";
+import PropTypes from 'prop-types';
+
 const Read_Book = ({ read }) => {
   const {
     bookId,
@@ -52,7 +54,7 @@ const Read_Book = ({ read }) => {
                           </p>
                         </div>
                       </div>
-                      <div className="flex space-x-4 text-gray-400">
+                      <div className="flex space-x-4 text-gray-400 mb-2 border-b-2">
                         <p className="flex items-center">
                         <IoPeopleOutline className="text-lg mx-1" />Publisher:<span>{publisher}</span>
                         </p>
@@ -83,5 +85,7 @@ const Read_Book = ({ read }) => {
     </div>
   );
 };
-
+Read_Book.propTypes = {
+  read:PropTypes.object,
+}
 export default Read_Book;

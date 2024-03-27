@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 const Wish_Book = ({ wish }) => {
   const {
     bookId,
@@ -84,5 +85,7 @@ const Wish_Book = ({ wish }) => {
     </div>
   );
 };
-
+Wish_Book.propTypes = {
+  wish:PropTypes.object
+}
 export default Wish_Book;

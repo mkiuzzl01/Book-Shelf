@@ -1,11 +1,12 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData} from "react-router-dom";
 import Books from "../Books/Books";
 import Hero from "../Hero/Hero";
+import { ScaleLoader } from 'react-spinners';
 
 const Home = () => {
     const books = useLoaderData();
     return (
-        <div>
+        <div>          
             <Hero></Hero>
             <div className="my-8">
             <Books books={books}></Books>
