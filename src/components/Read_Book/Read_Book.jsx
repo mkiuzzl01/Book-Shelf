@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { IoPeopleOutline } from "react-icons/io5";
+import { MdOutlineFindInPage } from "react-icons/md";
 const Read_Book = ({ read }) => {
   const {
     bookId,
@@ -31,7 +33,7 @@ const Read_Book = ({ read }) => {
                     <h3 className="text-lg font-semibold leading-snug sm:pr-8">
                       {bookName}
                     </h3>
-                    <p className="text-sm text-gray-400">By {author}</p>
+                    <p className="text-sm">By {author}</p>
                     <div>
                       <div className="flex justify-center items-center">
                         <div className="text-center flex">
@@ -45,17 +47,17 @@ const Read_Book = ({ read }) => {
                           ))}
                         </div>
                         <div>
-                          <p>
-                            <span>Year of Publishing:</span> {yearOfPublishing}
+                          <p className="text-gray-600">
+                            <span >Year of Publishing:</span> {yearOfPublishing}
                           </p>
                         </div>
                       </div>
-                      <div>
-                        <p>
-                          <span>Publisher:</span> {publisher}
+                      <div className="flex space-x-4 text-gray-400">
+                        <p className="flex items-center">
+                        <IoPeopleOutline className="text-lg mx-1" />Publisher:<span>{publisher}</span>
                         </p>
-                        <p>
-                          <span>Page:</span> {totalPages}
+                        <p className="flex items-center">
+                        <MdOutlineFindInPage className="text-lg mx-1" /> Page:<span>{totalPages}</span>
                         </p>
                       </div>
                     </div>

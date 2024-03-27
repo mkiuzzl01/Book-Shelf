@@ -13,10 +13,12 @@ import Wishlist_Books from "./components/Wishlist_Books/Wishlist_Books.jsx";
 import Read_Books from "./components/Read_Books/Read_Books.jsx";
 import About from "./components/About/About.jsx";
 import Contact_Us from "./components/Contact_Us/Contact_Us.jsx";
+import Not_Found_Page from "./components/Not_Found_Page/Not_Found_Page.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<Not_Found_Page></Not_Found_Page>,
     children: [
       {
         path: "/",
