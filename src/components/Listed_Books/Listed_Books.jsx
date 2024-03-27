@@ -19,10 +19,13 @@ const Listed_Books = () => {
           className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
         >
           <li>
-            <a>Item 1</a>
+            <a>Rating</a>
           </li>
           <li>
-            <a>Item 2</a>
+            <a>Number of Pages</a>
+          </li>
+          <li>
+            <a>Published Year</a>
           </li>
         </ul>
       </div>
