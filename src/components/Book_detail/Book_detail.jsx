@@ -44,7 +44,7 @@ const Book_detail = () => {
     }
 
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center p-2">
             <div className="bg-[#1313130D] p-8 flex justify-center items-center">
                 <img src={image}
                 className="w-[250px]"

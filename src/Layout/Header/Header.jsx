@@ -100,9 +100,9 @@ const Header = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="space-x-4 menu-horizontal px-1">{link}</ul>
+        <ul className="space-x-4 menu-horizontal ">{link}</ul>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end space-x-2">
         <Link>
           <span className="btn bg-[#23BE0A] text-white">Sign In</span>
         </Link>

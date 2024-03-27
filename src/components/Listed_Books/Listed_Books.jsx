@@ -57,7 +57,7 @@ const Listed_Books = () => {
                 to={``}
                 onClick={() => setIndex(0)}
                 className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${
-                  index === 0 ? "border border-b-0" : "border-b"
+                  index === 0 ? "border border-b-0" : "border-b "
                 } dark:border-gray-600 text-gray-400 dark:text-gray-600`}
               >
                 <svg
@@ -70,7 +70,7 @@ const Listed_Books = () => {
                   strokeLinejoin="round"
                   className="w-4 h-4"
                 >
-                  <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                  <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" className={index === 0 ? 'text-red-500':'text-black'}></path>
                 </svg>
                 <span>Read Books</span>
               </Link>
@@ -91,7 +91,7 @@ const Listed_Books = () => {
                   strokeLinejoin="round"
                   className="w-4 h-4"
                 >
-                  <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                  <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" className={index === 1 ? 'text-red-500':'text-black'}></path>
                 </svg>
                 <span>Wishlist Books</span>
               </Link>

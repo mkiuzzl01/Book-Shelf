@@ -12,11 +12,13 @@ const Root = () => {
           <Header></Header>
         </div>
         <div className="min-h-[calc(100vh-116px)]">
+          <div className="flex flex-col items-center">
           {state === "loading" && (
-            <div className="text-center">
+            <div className="text-center absolute">
               <ScaleLoader color="#36d6a7" />
             </div>
           )}
+          </div>
           <Outlet></Outlet>
         </div>
       </div>
