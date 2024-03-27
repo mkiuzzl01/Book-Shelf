@@ -1,12 +1,15 @@
 import { Link, Outlet } from "react-router-dom";
-import { useState } from "react";
+import { createContext, useState } from "react";
 import { MdKeyboardArrowDown } from "react-icons/md";
+
+export const Rating = createContext(rating =>{
+  return rating;
+})
+
 const Listed_Books = () => {
   const [index, setIndex] = useState(0);
+  const [rating, setRating] = useState('');
 
-const handleRating = rating =>{
-  console.log(rating)
-}
 const handlePageNumber = pages =>{
   console.log(pages)
 }
@@ -15,7 +18,8 @@ const handlePublishYear = year =>{
 }
 
   return (
-    <div>
+    <Rating.Provider value={rating}>
+      <div>
       <h1 className="text-3xl font-bold bg-[#1313130D] p-4 text-center">
         Books
       </h1>
@@ -28,7 +32,7 @@ const handlePublishYear = year =>{
           tabIndex={0}
           className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
         >
-          <li onClick={()=>handleRating('rating')}>
+          <li onClick={()=>setRating('rating')}>
             <a>Rating</a>
           </li>
           <li onClick={()=>handlePageNumber('pages')}>
@@ -86,6 +90,7 @@ const handlePublishYear = year =>{
       </div>
       <Outlet></Outlet>
     </div>
+    </Rating.Provider>
   );
 };
 
