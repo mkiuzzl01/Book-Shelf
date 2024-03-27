@@ -8,7 +8,7 @@ const Header = () => {
           className={({ isActive }) =>
             isActive
               ? "border-2 rounded-lg text-[#23BE0A] border-[#23BE0A] p-2"
-              : "bg-white p-2"
+              : "bg-white p-2 hover:border-gray-600 hover:border-2 rounded-lg"
           }
           to="/"
         >
@@ -20,7 +20,19 @@ const Header = () => {
           className={({ isActive }) =>
             isActive
               ? "border-2 rounded-lg text-[#23BE0A] border-[#23BE0A] p-2"
-              : "bg-white p-2"
+              : "bg-white p-2 hover:border-gray-600 hover:border-2 rounded-lg"
+          }
+          to="/About"
+        >
+          About
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "border-2 rounded-lg text-[#23BE0A] border-[#23BE0A] p-2"
+              : "bg-white p-2 hover:border-gray-600 hover:border-2 rounded-lg"
           }
           to="/Listed_Books"
         >
@@ -32,11 +44,24 @@ const Header = () => {
           className={({ isActive }) =>
             isActive
               ? "border-2 rounded-lg text-[#23BE0A] border-[#23BE0A] p-2"
-              : "bg-white p-2"
+              : "bg-white p-2 hover:border-gray-600 hover:border-2 rounded-lg"
           }
           to="/Pages_to_Read"
         >
           Pages to Read
+        </NavLink>
+      </li>
+
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "border-2 rounded-lg text-[#23BE0A] border-[#23BE0A] p-2"
+              : "bg-white p-2 hover:border-gray-600 hover:border-2 rounded-lg"
+          }
+          to="/Contact_Us"
+        >
+          Contact Us
         </NavLink>
       </li>
     </>

@@ -4,6 +4,16 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 const Listed_Books = () => {
   const [index, setIndex] = useState(0);
 
+const handleRating = rating =>{
+  console.log(rating)
+}
+const handlePageNumber = pages =>{
+  console.log(pages)
+}
+const handlePublishYear = year =>{
+  console.log(year)
+}
+
   return (
     <div>
       <h1 className="text-3xl font-bold bg-[#1313130D] p-4 text-center">
@@ -18,13 +28,13 @@ const Listed_Books = () => {
           tabIndex={0}
           className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
         >
-          <li>
+          <li onClick={()=>handleRating('rating')}>
             <a>Rating</a>
           </li>
-          <li>
+          <li onClick={()=>handlePageNumber('pages')}>
             <a>Number of Pages</a>
           </li>
-          <li>
+          <li onClick={()=>handlePublishYear('Year')}>
             <a>Published Year</a>
           </li>
         </ul>

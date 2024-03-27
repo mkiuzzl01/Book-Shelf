@@ -11,6 +11,8 @@ import "../public/Books.json";
 import axios from "axios";
 import Wishlist_Books from "./components/Wishlist_Books/Wishlist_Books.jsx";
 import Read_Books from "./components/Read_Books/Read_Books.jsx";
+import About from "./components/About/About.jsx";
+import Contact_Us from "./components/Contact_Us/Contact_Us.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -20,6 +22,14 @@ const router = createBrowserRouter([
         path: "/",
         loader: () => fetch("../public/Books.json"),
         element: <Home></Home>,
+      },
+      {
+        path:'/About',
+        element:<About></About>
+      },
+      {
+        path:'/Contact_Us',
+        element:<Contact_Us></Contact_Us>
       },
       {
         path: "/Book_detail/:bookId",
