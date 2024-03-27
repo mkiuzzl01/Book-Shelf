@@ -95,7 +95,7 @@ const Header = () => {
         </div>
         <Link to="/">
           <span className="btn btn-ghost text-lg lg:text-2xl font-bold">
-            Book Vibe
+            Book shelf
           </span>
         </Link>
       </div>

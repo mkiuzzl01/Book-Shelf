@@ -52,7 +52,7 @@ const Contact_Us = () => {
             <input
               type="text"
               placeholder="Leroy Jenkins"
-              className="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:ring-violet-400 focus:dark:ring-violet-600 bg-gray-800 dark:bg-gray-100"
+              className="block w-full rounded-md shadow-sm p-3 "
             />
           </label>
           <label className="block">
@@ -60,14 +60,14 @@ const Contact_Us = () => {
             <input
               type="email"
               placeholder="leroy@jenkins.com"
-              className="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:ring-violet-400 focus:dark:ring-violet-600 bg-gray-800 dark:bg-gray-100"
+              className="block w-full rounded-md shadow-sm p-3 "
             />
           </label>
           <label className="block">
             <span className="mb-1">Message</span>
             <textarea
               rows="3"
-              className="block w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 focus:dark:ring-violet-600 bg-gray-800 dark:bg-gray-100"
+              className="block w-full rounded-md shadow-sm p-3"
             ></textarea>
           </label>
           <button
